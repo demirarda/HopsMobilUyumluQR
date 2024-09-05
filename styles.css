@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #a13c33;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    padding-top: 70px; /* Sayfa içeriğinin sabitlenen header ile çakışmaması için */
+}
+
+header img {
+    width: 100%;
+    height: 250px; /* Yüksekliği azalttım */
+    display: block;
+    margin: 0 auto;
+    object-fit: cover; /* Resmin tam olarak sığması için */
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+}
+
+.menu-item {
+    position: relative;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu-item h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-size: 16px;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+/* Mobil uyumluluk için medya sorguları */
+@media (max-width: 768px) {
+    .menu {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-item h3 {
+        font-size: 14px;
+    }
+}
+
+/* Burger sayfasına özgü detaylar */
+.menu-detail {
+    padding: 20px;
+}
+
+.menu-item-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #bf524c; /* Arka plan rengini genel arka plan rengiyle uyumlu hale getirdik */
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    color: #fff;
+    justify-content: center;
+}
+
+.menu-item-detail img {
+    width: 100%;
+    height: auto; /* Genişliğe göre yüksekliği otomatik ayarlar */
+    border-radius: 10px;
+    object-fit: contain; /* Resmin tamamen görünmesini sağlar */
+}
+
+.item-info {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.item-info h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.item-info p {
+    font-size: 14px;
+    color: #fff;
+}
+
+.price {
+    font-size: 18px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* Geri butonu */
+.back-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #ffffff;
+    color: #a13c33;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.logo-bar {
+    background-color: #000; /* Şerit rengi */
+    padding: 10px;
+    text-align: center;
+    position: fixed; /* Sabit pozisyon */
+    top: 0; /* Üst kısma sabitler */
+    width: 100%; /* Tam genişlik */
+    z-index: 1000; /* Diğer öğelerin üzerinde görünmesini sağlar */
+}
+
+.logo-bar img.logo {
+    height: 50px; /* Logonun yüksekliği */
+    object-fit: contain;
+}
+
+/* Mobil uyumluluk için medya sorguları */
+@media (max-width: 768px) {
+    .menu-item-detail {
+        flex-direction: column;
+    }
+
+    .menu-item-detail img {
+        width: 100%;
+        height: auto; /* Genişliğe göre yüksekliği otomatik ayarlar */
+    }
+}
